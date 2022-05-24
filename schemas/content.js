@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
-
+const AutoIncrement = require("mongoose-sequence")(mongoose);
 const contentsSchema = new mongoose.Schema({
 
-    contentsId: {
+    seq: {
         type: Number,
-        required: true,
         unique: true,
       },
 
@@ -17,7 +16,7 @@ const contentsSchema = new mongoose.Schema({
     detail:{
       type: String,
     },
-
+ 
     title: {
       type: String,
       },
@@ -32,5 +31,7 @@ const contentsSchema = new mongoose.Schema({
         default: new Date
       }
     });
-    
+
+    contentsSchema.plugin(AutoIncrement, { inc_field: "seq" });
+
     module.exports = mongoose.model("Contents", contentsSchema);

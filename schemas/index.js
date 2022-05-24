@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const connect = () =>{
-    mongoose.connect("mongodb://localhost:27017/my_backend_blog", {ignoreUndefined: true}).catch((err) => {
+    mongoose.connect("mongodb+srv://test:sparta@cluster0.j1l8r.mongodb.net/?retryWrites=true&w=majority", {ignoreUndefined: true}).catch((err) => {
         console.error(err);
     });
 };
