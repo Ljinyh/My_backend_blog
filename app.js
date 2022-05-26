@@ -27,7 +27,7 @@ app.post("/contents", (req,res)=>{
 });
 
 app.get("/contents",(req, res) => {
-    res.render(__dirname + '/index.html')
+    res.json({});
 });
 
 app.get("/contents/detail", (req,res) => {
